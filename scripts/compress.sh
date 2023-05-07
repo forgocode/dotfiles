@@ -1,0 +1,4 @@
+commpassNeovim ()
+{
+	zip -r ~/.zshrc 
+}
