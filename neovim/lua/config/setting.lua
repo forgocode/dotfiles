@@ -36,3 +36,4 @@ vim.keymapping = {
 	bdmap = vim.api.nvim_buf_del_keymap,
 	opts = {noremap = true, silent = true}
 }
+

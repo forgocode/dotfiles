@@ -81,5 +81,7 @@ return{
       {"nvim-treesitter/nvim-treesitter"}
     }
   },
+	{'lewis6991/gitsigns.nvim',
+	config = function() require("plugin.config.gitsigns") end},
 	
 }
