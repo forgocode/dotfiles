@@ -64,9 +64,22 @@ return{
   -- 颜色高亮
   {'nvim-treesitter/nvim-treesitter',
 		config = function() require("plugin.config.nvim-treesitter")end},
-  -- 
+  -- one dark 主题
 	{"navarasu/onedark.nvim",
 		lazy = false,
 		config = function() require("plugin.config.onedark")end},
+ -- lsp美化
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    dependencies = {
+      {"nvim-tree/nvim-web-devicons"},
+      --Please make sure you install markdown and markdown_inline parser
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  },
 	
 }
