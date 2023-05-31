@@ -83,5 +83,7 @@ return{
   },
 	{'lewis6991/gitsigns.nvim',
 	config = function() require("plugin.config.gitsigns") end},
-	
+	-- tmux nvim manager
+	{'christoomey/vim-tmux-navigator',
+	config = function() require("plugin.config.tmux-navigator") end},
 }
