@@ -86,4 +86,7 @@ return{
 	-- tmux nvim manager
 	{'christoomey/vim-tmux-navigator',
 	config = function() require("plugin.config.tmux-navigator") end},
+	{'nvim-lualine/lualine.nvim',
+	dependencies = {'nvim-tree/nvim-web-devicons', opt = true},
+	config = function()require("plugin.config.lualine") end,},
 }
