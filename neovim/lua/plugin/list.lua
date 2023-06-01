@@ -89,4 +89,8 @@ return{
 	{'nvim-lualine/lualine.nvim',
 	dependencies = {'nvim-tree/nvim-web-devicons', opt = true},
 	config = function()require("plugin.config.lualine") end,},
+	-- Git 提交插件
+	{"tpope/vim-fugitive",
+	event = "VeryLazy",
+	config = function() require("plugin.config.vim-fagitive")end},
 }
