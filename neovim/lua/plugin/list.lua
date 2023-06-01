@@ -93,4 +93,17 @@ return{
 	{"tpope/vim-fugitive",
 	event = "VeryLazy",
 	config = function() require("plugin.config.vim-fagitive")end},
+	-- 代码注释插件
+	{'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()end
+	},
+	-- TODO插件
+	{"folke/todo-comments.nvim",
+  	dependencies = { "nvim-lua/plenary.nvim" },
+ 	opts = function() require("plugin.config.todo-comments")end}
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  
 }
