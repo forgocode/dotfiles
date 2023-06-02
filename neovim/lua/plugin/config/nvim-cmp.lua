@@ -5,16 +5,16 @@ cmp.setup({
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body)
-			end,
-		},
+		end,
+	},
 	-- 补全源的排序
 	sources = cmp.config.sources({
-		{name = "vsnip"},
-		{name = "nvim_lsp"},
-		{name = "path"},
-		{name = "buffer"},
-		{name = "cmdline"},
-		{name = "spell"},
+		{ name = "vsnip" },
+		{ name = "nvim_lsp" },
+		{ name = "path" },
+		{ name = "buffer" },
+		{ name = "cmdline" },
+		{ name = "spell" },
 	}),
 	-- 格式化补全菜单
 	formatting = {
@@ -22,10 +22,10 @@ cmp.setup({
 			with_text = true,
 			maxwidth = 50,
 			before = function(entry, vim_item)
-				vim_item.menu = "[" ..string.upper(entry.source.name).."]"
+				vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
 				return vim_item
-			end
-		})
+			end,
+		}),
 	},
 	-- 对补全建议排序
 	sorting = {
@@ -38,30 +38,29 @@ cmp.setup({
 			cmp.config.compare.kind,
 			cmp.config.compare.sort_text,
 			cmp.config.compare.length,
-			cmp.config.compare.order
-		}
+			cmp.config.compare.order,
+		},
 	},
 	-- 补全相关的按键
 	mapping = {
-		['<Tab>'] = cmp.mapping.select_next_item(),
-		['<Up>'] = cmp.mapping.select_prev_item(),
+		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<Up>"] = cmp.mapping.select_prev_item(),
 		["<Down>"] = cmp.mapping.select_next_item(),
-		["<CR>"] = cmp.mapping.confirm({select = true}),
-	}
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	},
 })
-
 
 -- vim的"/"命令模式提示
-cmp.setup.cmdline({"/","?"},{
+cmp.setup.cmdline({ "/", "?" }, {
 	sources = {
-		{name = "buffer"}
-	}
+		{ name = "buffer" },
+	},
 })
 -- vim的":"命令模式提示
-cmp.setup.cmdline(":",{
+cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
-		{name = "path"}
-	},{
-		{name = "cmdline"}
-	})
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
 })

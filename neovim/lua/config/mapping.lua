@@ -15,9 +15,11 @@ vim.keymapping.smap("i", "<A-h>", "<left>", vim.keymapping.opts)
 vim.keymapping.smap("i", "<A-l>", "<right>", vim.keymapping.opts)
 
 -- 分屏
-vim.keymapping.smap("n", "sv", "<cmd>vsp<CR>", vim.keymapping.opts)
+vim.keymapping.smap("n", "sp", "<cmd>vsp<CR>", vim.keymapping.opts)
 vim.keymapping.smap("n", "sh", "<cmd>sp<CR>", vim.keymapping.opts)
 vim.keymapping.smap("n", "sc", "<C-w>c", vim.keymapping.opts)
 vim.keymapping.smap("n", "so", "<C-w>o", vim.keymapping.opts)
+
+vim.keymap.set("v", "<C-c>", '"+y', vim.keymapping.opts)
 
 
