@@ -120,9 +120,9 @@ alias cdgo='cd $HOME/goWorkspace/'
 export GOPATH="$HOME/goWorkspace"
 export GOPROXY="https://goproxy.cn,direct"
 export PATH=/root/goWorkspace/bin/:$PATH
-export PATH=/root/go/go1.20.3/bin/:$PATH
+export PATH=/root/go/bin:$PATH
 
-export GOROOT="/root/go/go1.20.3"
+export GOROOT="/root/go"
 
 #设置时区
 TZ='Asia/Shanghai'
