@@ -1,18 +1,17 @@
 vim.cmd([[
-  augroup _bash
+  augroup _comment
 	autocmd!
-	autocmd BufNewFile *.sh exec ":call Set_info()"
+	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* exec ":call Set_info()"
     function Set_info()
-	  call setline(1, '#/bin/bash')
-	  call setline(2, '# **********************************************************')
-	  call setline(3, '# * Author           : forgocode')
-	  call setline(4, '# * Email            : forgocode#163.com')
-	  call setline(5, '# * Github           : https://github.com/forgocode')
-	  call setline(6, '# * Create Time      : '.strftime("%Y-%m-%d %H:%M"))
-	  call setline(7, '# * FileName         : '.expand("%"))
-	  call setline(8, '# * Description      : ')
-	  call setline(9, '# **********************************************************')
-	  call setline(10, '')
+	  call setline(1, '# **********************************************************')
+	  call setline(2, '# * Author           : forgocode')
+	  call setline(3, '# * Email            : forgocode@163.com')
+	  call setline(4, '# * Github           : https://github.com/forgocode')
+	  call setline(5, '# * Create Time      : '.strftime("%Y-%m-%d %H:%M"))
+	  call setline(6, '# * FileName         : '.expand("%"))
+	  call setline(7, '# * Description      : ')
+	  call setline(8, '# **********************************************************')
+	  call setline(9, '')
     endfunc
   augroup end
 

@@ -114,6 +114,8 @@ return {
 			require("plugin.config.onedark")
 		end,
 	},
+	-- nightly
+	{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 	-- lsp美化
 	{
 		"glepnir/lspsaga.nvim",

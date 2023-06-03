@@ -20,6 +20,7 @@
   "neoformat": { "branch": "master", "commit": "2d5d071d5957681ae677ee06f6eb879a61b7b618" },
   "neotest": { "branch": "master", "commit": "10e6763d0794c70917faf45e8d869a1306d5182e" },
   "neotest-go": { "branch": "main", "commit": "4e7a87967e45f2b357fd546b0b7877774191772e" },
+  "nightfly": { "branch": "master", "commit": "0c81683556449290cb24d80a5c6603fa97e94ed2" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
   "nvim-cmp": { "branch": "main", "commit": "fc0f694af1a742ada77e5b1c91ff405c746f4a26" },
   "nvim-lsp-installer": { "branch": "main", "commit": "17e0bfa5f2c8854d1636fcd036dc8284db136baa" },
