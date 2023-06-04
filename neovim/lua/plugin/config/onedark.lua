@@ -37,4 +37,4 @@ require("onedark").setup({
 		background = true, -- use background color for virtual text
 	},
 })
-vim.cmd([[colorscheme nightfly]])
+vim.cmd([[colorscheme onedark]])
