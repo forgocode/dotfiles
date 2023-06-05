@@ -19,4 +19,21 @@ vim.cmd([[
 	autocmd!
 	autocmd BufWritePre * undojoin | Neoformat
   augroup END
+
+  augroup go
+	autocmd!
+	autocmd FileType go iabbrev  <buffer> Test func Test_(t testing.T) { }
+	autocmd BufNewFile *_test.go exec ":call Start_Go_Test()"
+    function Start_Go_Test()
+  		call setline(1, 'package '.expand("%:p:h:t"))
+  		call setline(2, '')
+  		call setline(3, 'import(')
+  		call setline(4, '	"testing"')
+  		call setline(5, ')')
+  		call setline(6, '')
+  		call setline(7, 'func Test_ (t testing.T) { }')
+  		call setline(8, '')
+  	endfunc
+  augroup END
+
 ]])
