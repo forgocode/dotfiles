@@ -1,7 +1,7 @@
 vim.cmd([[
-  augroup _comment
+  augroup comment_config
 	autocmd!
-	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* exec ":call Set_info()"
+	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* :call Set_info() | normal G 
     function Set_info()
 	  call setline(1, '# **********************************************************')
 	  call setline(2, '# * Author           : forgocode')
@@ -12,6 +12,7 @@ vim.cmd([[
 	  call setline(7, '# * Description      : ')
 	  call setline(8, '# **********************************************************')
 	  call setline(9, '')
+	  call setline(10, '')
     endfunc
   augroup end
 
@@ -20,9 +21,10 @@ vim.cmd([[
 	autocmd BufWritePre * undojoin | Neoformat
   augroup END
 
-  augroup go
+  augroup go_config
 	autocmd!
-	autocmd FileType go iabbrev  <buffer> Test func Test_(t testing.T) { }
+	autocmd FileType go iabbrev  <buffer> Test func Test_(t *testing.T) { }
+	autocmd FileType go iabbrev  <buffer> main func main(){ }
 	autocmd BufNewFile *_test.go exec ":call Start_Go_Test()"
     function Start_Go_Test()
   		call setline(1, 'package '.expand("%:p:h:t"))
@@ -31,7 +33,7 @@ vim.cmd([[
   		call setline(4, '	"testing"')
   		call setline(5, ')')
   		call setline(6, '')
-  		call setline(7, 'func Test_ (t testing.T) { }')
+  		call setline(7, 'func Test_ (t *testing.T) { }')
   		call setline(8, '')
   	endfunc
   augroup END
