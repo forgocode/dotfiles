@@ -43,9 +43,16 @@ return {
 	},
 	-- 自动安装lsp服务
 	{
-		"williamboman/nvim-lsp-installer",
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		config = function()
-			require("plugin.config.nvim-lsp-installer")
+			require("plugin.config.mason-nvim")
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("plugin.config.mason-lspconfig-nvim")
 		end,
 	},
 	-- lsp配置
@@ -55,6 +62,12 @@ return {
 			require("plugin.config.nvim-lspconfig")
 		end,
 	},
+	-- {
+	-- 	"williamboman/nvim-lsp-installer",
+	-- 	config = function()
+	-- 		require("plugin.config.nvim-lsp-installer")
+	-- 	end,
+	-- },
 	-- 文件字母查找
 	{
 		"nvim-telescope/telescope.nvim",

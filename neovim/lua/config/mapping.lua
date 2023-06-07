@@ -1,25 +1,24 @@
-vim.keymapping.smap("n", "H", "^", vim.keymapping.opts)
-vim.keymapping.smap("n", "L", "$", vim.keymapping.opts)
-vim.keymapping.smap("i", "jj", "<Esc>", vim.keymapping.opts)
+opts = { noremap = true, silent = true }
+vim.keymap.set("n", "H", "^", opts)
+vim.keymap.set("n", "L", "$", opts)
+vim.keymap.set("i", "jj", "<Esc>", opts)
 
-vim.keymapping.smap("v", "H", "^", vim.keymapping.opts)
-vim.keymapping.smap("v", "L", "$", vim.keymapping.opts)
+vim.keymap.set("v", "H", "^", opts)
+vim.keymap.set("v", "L", "$", opts)
 
-vim.keymapping.smap("n", "<C-u>", "15k", vim.keymapping.opts)
-vim.keymapping.smap("n", "<C-d>", "15j", vim.keymapping.opts)
+vim.keymap.set("n", "<C-u>", "15k", opts)
+vim.keymap.set("n", "<C-d>", "15j", opts)
 
 --插入模式的上下移动
-vim.keymapping.smap("i", "<A-k>", "<up>", vim.keymapping.opts)
-vim.keymapping.smap("i", "<A-j>", "<down>", vim.keymapping.opts)
-vim.keymapping.smap("i", "<A-h>", "<left>", vim.keymapping.opts)
-vim.keymapping.smap("i", "<A-l>", "<right>", vim.keymapping.opts)
+vim.keymap.set("i", "<A-k>", "<up>", opts)
+vim.keymap.set("i", "<A-j>", "<down>", opts)
+vim.keymap.set("i", "<A-h>", "<left>", opts)
+vim.keymap.set("i", "<A-l>", "<right>", opts)
 
 -- 分屏
-vim.keymapping.smap("n", "sp", "<cmd>vsp<CR>", vim.keymapping.opts)
-vim.keymapping.smap("n", "sh", "<cmd>sp<CR>", vim.keymapping.opts)
-vim.keymapping.smap("n", "sc", "<C-w>c", vim.keymapping.opts)
-vim.keymapping.smap("n", "so", "<C-w>o", vim.keymapping.opts)
+vim.keymap.set("n", "sp", "<cmd>vsp<CR>", opts)
+vim.keymap.set("n", "sh", "<cmd>sp<CR>", opts)
+vim.keymap.set("n", "sc", "<C-w>c", opts)
+vim.keymap.set("n", "so", "<C-w>o", opts)
 
-vim.keymap.set("v", "<C-c>", '"+y', vim.keymapping.opts)
-
-
+vim.keymap.set("v", "<C-c>", '"+y', opts)
