@@ -38,4 +38,8 @@ vim.cmd([[
   	endfunc
   augroup END
 
+  augroup rust_config
+  	autocmd!
+  augroup END
+
 ]])

@@ -4,11 +4,12 @@ local servers = {
 	--sumneko_lua = require("lsp.sumneko_lua"),
 	lua_ls = require("lsp.lua_ls"),
 	gopls = require("lsp.gopls"),
-	--bashls = require("lsp.bashls"),
-	--jsonls = require("lsp.jsonls"),
-	--yamlls = require("lsp.yamlls"),
-	--cmake = require("lsp.cmake"),
+	-- bashls = require("lsp.bashls"),
+	-- jsonls = require("lsp.jsonls"),
+	-- yamlls = require("lsp.yamlls"),
+	-- cmake = require("lsp.cmake"),
 	-- marksman = require("lsp.marksman")
+	-- rust_analyzer = require("lsp.rust_analyzer")
 }
 
 local function attach(_, buffer)
