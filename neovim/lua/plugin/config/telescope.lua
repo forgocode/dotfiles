@@ -1,3 +1,12 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : telescope.lua
+--* Description      :
+--**********************************************************
+
 require("telescope").setup()
 -- find file
 vim.keymapping.smap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", vim.keymapping.opts)

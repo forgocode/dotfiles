@@ -1,3 +1,12 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : onedark.lua
+--* Description      :
+--**********************************************************
+
 require("onedark").setup({
 	-- Main options --
 	style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'

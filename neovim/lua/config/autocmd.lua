@@ -1,8 +1,17 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : autocmd.lua
+--* Description      :
+--**********************************************************
+
 vim.cmd([[
   augroup comment_config
 	autocmd!
-	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* :call Set_info() | normal G 
-    function Set_info()
+	autocmd BufNewFile *.yaml,*.sh,*.yml,Dockerfile* :call Set_Common_Info() | normal G 
+    function Set_Common_Info()
 	  call setline(1, '# **********************************************************')
 	  call setline(2, '# * Author           : forgocode')
 	  call setline(3, '# * Email            : forgocode@163.com')
@@ -41,5 +50,22 @@ vim.cmd([[
   augroup rust_config
   	autocmd!
   augroup END
+
+  augroup comment_config
+	autocmd!
+	autocmd BufNewFile *.lua :call Set_Lua_Info() | normal G 
+    function Set_Lua_Info()
+	  call setline(1, '-- **********************************************************')
+	  call setline(2, '-- * Author           : forgocode')
+	  call setline(3, '-- * Email            : forgocode@163.com')
+	  call setline(4, '-- * Github           : https://github.com/forgocode')
+	  call setline(5, '-- * Create Time      : '.strftime("%Y-%m-%d %H:%M"))
+	  call setline(6, '-- * FileName         : '.expand("%"))
+	  call setline(7, '-- * Description      : ')
+	  call setline(8, '-- **********************************************************')
+	  call setline(9, '')
+	  call setline(10, '')
+    endfunc
+  augroup end
 
 ]])

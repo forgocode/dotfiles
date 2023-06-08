@@ -1,3 +1,12 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : nvim-lspconfig.lua
+--* Description      :
+--**********************************************************
+
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 
@@ -22,17 +31,22 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions theme=dropdown<CR>", opts)
 
 	vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+
+	-- 变量重名 rename
+	vim.keymap.set("n", "<space>rn", "<cmd>Lspsage rename <CR>", opts)
+
 	-- 查看变量类型/声明？
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+
 	-- 结构体定义的地方
 	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-	-- 变量重名 rename
-	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-	vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+
+	-- 显示变量可执行的操作
+	vim.keymap.set({ "n", "v" }, "<space>ca", "<cmd>Lspsaga code_action <CR>", opts)
+
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 end
 
 -- lsp server setting
@@ -88,5 +102,17 @@ require("lspconfig").rust_analyzer.setup({
 	cmd = { "rust-analyzer" },
 	filetypes = { "rust" },
 	root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
+	on_attach = on_attach,
+})
+
+require("lspconfig").bashls.setup({
+	cmd = { "bash-language-server", "start" },
+	settings = {
+		bashIde = {
+			globPattern = "*@(.sh|.inc|.bash|.command)",
+		},
+	},
+	filetypes = { "sh" },
+	root_dir = util.find_git_ancestor,
 	on_attach = on_attach,
 })

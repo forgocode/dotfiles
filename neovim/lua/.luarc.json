@@ -18,6 +18,7 @@
         "/usr/share/nvim/runtime",
         "/root/.local/state/nvim/lazy/readme",
         "/root/.local/share/nvim/lazy/nightfly/after",
+        "${3rd}/luassert/library",
         "${3rd}/luassert/library"
     ]
 }

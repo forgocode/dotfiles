@@ -1,4 +1,12 @@
--- option
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : setting.lua
+--* Description      :
+--**********************************************************
+
 -- tab 4个空格
 vim.o.tabstop = 4
 -- 编码格式utf-8

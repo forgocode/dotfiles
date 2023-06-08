@@ -1,3 +1,12 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : list.lua
+--* Description      :
+--**********************************************************
+
 return {
 	{
 		"folke/tokyonight.nvim",
@@ -62,12 +71,6 @@ return {
 			require("plugin.config.nvim-lspconfig")
 		end,
 	},
-	-- {
-	-- 	"williamboman/nvim-lsp-installer",
-	-- 	config = function()
-	-- 		require("plugin.config.nvim-lsp-installer")
-	-- 	end,
-	-- },
 	-- 文件字母查找
 	{
 		"nvim-telescope/telescope.nvim",

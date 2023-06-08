@@ -75,5 +75,6 @@ download_omz_config ()
 
 print_start
 check
+ln_config
 # rm_config_path
 

@@ -1,4 +1,13 @@
-opts = { noremap = true, silent = true }
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : mapping.lua
+--* Description      :
+--**********************************************************
+
+local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "H", "^", opts)
 vim.keymap.set("n", "L", "$", opts)
 vim.keymap.set("i", "jj", "<Esc>", opts)

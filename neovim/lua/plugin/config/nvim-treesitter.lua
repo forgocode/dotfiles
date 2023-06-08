@@ -1,3 +1,12 @@
+--**********************************************************
+--* Author           : forgocode
+--* Email            : forgocode@163.com
+--* Github           : https://github.com/forgocode
+--* Create Time      : 2023-06-08 13:11
+--* FileName         : nvim-treesitter.lua
+--* Description      :
+--**********************************************************
+
 require("nvim-treesitter.configs").setup({
 	-- 安装 language parser
 	-- :TSInstallInfo 命令查看支持的语言
