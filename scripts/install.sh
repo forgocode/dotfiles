@@ -57,7 +57,7 @@ rm_config_path ()
 
 download_nvim_config()
 {
-
+	echo "download neovim config"
 }
 
 download_tmux_config ()
