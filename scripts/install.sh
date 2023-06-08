@@ -15,8 +15,8 @@ config_dir["tmux"]="/root/.tmux.conf"
 config_dir["oh-my-zsh"]="/root/.zshrc"
 
 print_start() {
-	echo "This is forgocode dotfile install program."
-	echo "Start to install dotfile ..."
+	printf "This is forgocode dotfile install program. \n"
+	printf "Start to install dotfile ...\n"
 }
 
 check() {
@@ -29,15 +29,12 @@ check() {
 
 print_is_file_or_dir_exist() {
 	if [ -d $1 ]; then
-		echo "config dir: $1 is exist, it will be delete!!!"
-		return 1
-	elif [ -f $1 ];then
-		echo "config file: $1 is exist, it will be delete!!!"
-		return 1
+		printf "config dir: $1 is exist, it will be delete!!!\n"
+	elif [ -f $1 ]; then
+		printf "config file: $1 is exist, it will be delete!!!\n"
 	else
-		echo "config: $1 is not existed, return."
+		printf "config: $1 is not existed, return.\n"
 	fi
-	return 0
 }
 
 ln_config() {
@@ -47,27 +44,22 @@ ln_config() {
 	ln -s ../oh-my-zsh/zshrc ~/.zshrc
 }
 
-rm_config_path ()
-{
+rm_config_path() {
 	rm ~/.zshrc
 	rm ~/.p10k.zsh
 	rm ~/.tmux.conf
 	rm -rf ~/.config/nvim
 }
 
-download_nvim_config()
-{
-	echo "download neovim config"
+download_nvim_config() {
+	printf "download neovim config\n"
 }
 
-download_tmux_config ()
-{
+download_tmux_config() {
 	tmux source-file ~/.tmux.conf
 }
 
-
-download_omz_config ()
-{
+download_omz_config() {
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	source ~/.zshrc
@@ -75,6 +67,14 @@ download_omz_config ()
 
 print_start
 check
-ln_config
+printf "\033[31mReady to rm you config?(y/n) \033[0m\n"
+read is_rm_config
+if [ $is_rm_config = "y" ]; then
+	printf "rm config\n"
+else
+	printf '%s\n' "don't clean you config, return"
+fi
+# ln_config
 # rm_config_path
-
+#
+printf "\033[32mConfig is update successfully! enjoy it.\033[0m\n"

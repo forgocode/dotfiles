@@ -34,7 +34,7 @@ vim.cmd([[
 	autocmd!
 	autocmd FileType go iabbrev  <buffer> Test func Test_(t *testing.T) { }
 	autocmd FileType go iabbrev  <buffer> main func main(){ }
-	autocmd BufNewFile *_test.go exec ":call Start_Go_Test()"
+	autocmd BufNewFile *_test.go exec :call Start_Go_Test()
     function Start_Go_Test()
   		call setline(1, 'package '.expand("%:p:h:t"))
   		call setline(2, '')
@@ -51,7 +51,7 @@ vim.cmd([[
   	autocmd!
   augroup END
 
-  augroup comment_config
+  augroup lua_config
 	autocmd!
 	autocmd BufNewFile *.lua :call Set_Lua_Info() | normal G 
     function Set_Lua_Info()
