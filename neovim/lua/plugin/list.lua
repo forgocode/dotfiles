@@ -217,4 +217,15 @@ return {
 			require("plugin.config.neotest")
 		end,
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		config = function()
+			require("plugin.config.markdown-preview")
+		end,
+		ft = { "markdown" },
+		event = "VeryLazy",
+	},
 }
