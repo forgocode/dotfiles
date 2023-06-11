@@ -126,8 +126,8 @@ alias nf="neofetch"
 alias uwt= "ntpdate time.windows.com"
 
 export hostip=$(cat /etc/resolv.conf | grep -oP '(?<=nameserver\ ).*')
-#export localip=$(hostname -I | xargs echo -n)
-alias proxy='export http_proxy="${hostip}:10811";export all_proxy="${hostip}:10811";'
+export localip=`ip addr  |grep eth0 | head -n3 | grep inet | awk '{print$2}' | cut -d '/' -f 1`
+alias proxy='export http_proxy="${hostip}:7890";export all_proxy="${hostip}:7890";'
 alias unproxy='unset http_proxy;unset https_proxy; unset all_proxy'
 alias cdlua='cd $HOME/luaWorkspace/'
 alias cdgo='cd $HOME/goWorkspace/'
