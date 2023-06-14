@@ -228,4 +228,10 @@ return {
 		ft = { "markdown" },
 		event = "VeryLazy",
 	},
+	{
+		"liuchengxu/vista.vim",
+		config = function()
+			require("plugin.config.vista-vim")
+		end,
+	},
 }
