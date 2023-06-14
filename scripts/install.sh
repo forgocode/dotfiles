@@ -75,6 +75,7 @@ else
 	printf '%s\n' "don't clean you config, return"
 fi
 # ln_config
-# rm_config_path
+rm_config_path
 #
+ln_config
 printf "\033[32mConfig is update successfully! enjoy it.\033[0m\n"
