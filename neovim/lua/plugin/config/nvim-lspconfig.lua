@@ -31,7 +31,8 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions theme=dropdown<CR>", opts)
 
 	vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
-
+	--r 新窗口中打开
+	-- t 当前窗口打开
 	-- 变量重名 rename
 	vim.keymap.set("n", "<space>rn", "<cmd>Lspsage rename <CR>", opts)
 
@@ -43,10 +44,12 @@ local on_attach = function(_, bufnr)
 
 	-- 显示变量可执行的操作
 	vim.keymap.set({ "n", "v" }, "<space>ca", "<cmd>Lspsaga code_action <CR>", opts)
-
+	-- 查看实现的地方
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+
+	vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
+	-- 	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+	-- 	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 end
 
 -- lsp server setting
