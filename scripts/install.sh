@@ -7,6 +7,8 @@
 # * Description      :
 # **********************************************************
 
+SHEL_FOLDER=$(cd "$(dirname "$0")";pwd)
+echo $SHELL_FOLDER
 #关联数组
 declare -A config_dir
 
@@ -38,15 +40,15 @@ print_is_file_or_dir_exist() {
 }
 
 ln_config() {
-	ln -s ../tmux/tmux.conf ~/.tmux.conf
-	ln -s ../neovim ~/.config/nvim
-	ln -s ../powerlevel10k/p10k.zsh ~/.p10k.zsh
-	ln -s ../oh-my-zsh/zshrc ~/.zshrc
+	ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+	ln -s ~/dotfiles/neovim ~/.config/nvim
+	# ln -s ~/dotfiles/powerlevel10k/p10k.zsh ~/.p10k.zsh
+	ln -s ~/dotfiles/oh-my-zsh/zshrc ~/.zshrc
 }
 
 rm_config_path() {
 	rm ~/.zshrc
-	rm ~/.p10k.zsh
+	# rm ~/.p10k.zsh
 	rm ~/.tmux.conf
 	rm -rf ~/.config/nvim
 }
@@ -73,8 +75,9 @@ if [ $is_rm_config = "y" ]; then
 	printf "rm config\n"
 else
 	printf '%s\n' "don't clean you config, return"
+	exit
 fi
-# ln_config
-# rm_config_path
+rm_config_path
+ln_config
 #
 printf "\033[32mConfig is update successfully! enjoy it.\033[0m\n"
