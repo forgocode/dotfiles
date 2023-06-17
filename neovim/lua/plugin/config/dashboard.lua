@@ -6,38 +6,42 @@ require("dashboard").setup({
 		week_header = {
 			enable = true,
 			concat = "要保持好心情哦😎",
-			append = { "Welcome to forgocode's neovim. Enjoy it :) 😄" },
+			-- append = { "Welcome to forgocode's neovim. Enjoy it :) 😄" },
 		},
-		disable_move = true,
+		disable_move = false,
 		shortcut = {
 			{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
 			{
-				icon = " ",
-				icon_hl = "@variable",
-				desc = "Files",
+				desc = "Mason",
 				group = "Label",
-				action = "Telescope find_files",
-				key = "ff",
-			},
-			{
-				desc = " Apps",
-				group = "DiagnosticHint",
-				action = "Telescope app",
-				key = "a",
+				action = "Mason",
+				key = "m",
 			},
 			{
 				desc = " dotfiles",
 				group = "Number",
-				action = "Telescope dotfiles",
+				action = "Telescope find_files cmd=~/dotfiles/",
 				key = "d",
 			},
+			{
+				desc = " Quit",
+				group = "Special",
+				action = ":q",
+				key = "q",
+			},
 		},
-		packages = { enable = true }, -- show how many plugins neovim loaded
+		packages = { enable = false }, -- show how many plugins neovim loaded
 		-- limit how many projects list, action when you press key or enter it will run this action.
 		-- action can be a functino type, e.g.
 		-- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
-		project = { enable = true, limit = 8, icon = "your icon", label = "", action = "Telescope find_files cwd=" },
-		mru = { limit = 10, icon = "your icon", label = "" },
-		footer = {}, -- footer
+		project = {
+			enable = true,
+			limit = 8,
+			icon = "Recently open session",
+			label = "",
+			action = "Telescope find_files cwd=",
+		},
+		mru = { limit = 8, icon = "Recently Open Files", label = "" },
+		footer = { "Welcome to forgocode's neovim. Enjoy it :) 😄" }, -- footer
 	},
 })

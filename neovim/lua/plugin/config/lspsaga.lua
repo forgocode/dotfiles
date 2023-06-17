@@ -40,6 +40,7 @@ require("lspsaga").setup({
 		},
 	},
 	code_action = { ... },
+	rename = { quit = "<ESC>", exec = "<CR>" },
 	-- etc.
 	outline = {
 		keys = {

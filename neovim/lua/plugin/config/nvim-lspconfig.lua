@@ -34,7 +34,7 @@ local on_attach = function(_, bufnr)
 	--r 新窗口中打开
 	-- t 当前窗口打开
 	-- 变量重名 rename
-	vim.keymap.set("n", "<space>rn", "<cmd>Lspsage rename <CR>", opts)
+	vim.keymap.set("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
 
 	-- 查看变量类型/声明？
 	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
