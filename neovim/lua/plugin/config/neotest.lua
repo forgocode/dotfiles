@@ -23,3 +23,14 @@ require("neotest").setup({
 		require("neotest-go"),
 	},
 })
+vim.keymapping.smap("n", "<leader>rt", "<cmd>lua require('neotest').run.run()<CR>", vim.keymapping.opts)
+vim.keymapping.smap(
+	"n",
+	"<leader>rf",
+	"<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>",
+	vim.keymapping.opts
+)
+vim.keymapping.smap("n", "<leader>to", "<cmd>Neotest output<CR>", vim.keymapping.opts)
+vim.keymapping.smap("n", "<leader>tw", "<cmd>Neotest watch<CR>", vim.keymapping.opts)
+vim.keymapping.smap("n", "<leader>tp", "<cmd>Neotest output-panel<CR>", vim.keymapping.opts)
+vim.keymapping.smap("n", "<leader>ts", "<cmd>Neotest summary<CR>", vim.keymapping.opts)
