@@ -24,7 +24,7 @@ local on_attach = function(_, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	--todo: 可以退出<Esc>gr 和 gh
 	--vim.keymapping.smap("t", "<Esc>", "<cmd>q<CR>", vim.keymapping.opts)
-	-- vim.keymapping.smap("n", "<Esc>", "<cmd>q<CR>", vim.keymapping.opts)
+	--vim.keymapping.smap("n", "<Esc>", "<cmd>:q<CR>", vim.keymapping.opts)
 	-- 查找引用
 	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references theme=dropdown <CR>", opts)
 	-- 跳转到定义
@@ -38,10 +38,6 @@ local on_attach = function(_, bufnr)
 
 	-- 查看变量类型/声明？
 	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-
-	-- 结构体定义的地方
-	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-
 	-- 显示变量可执行的操作
 	vim.keymap.set({ "n", "v" }, "<space>ca", "<cmd>Lspsaga code_action <CR>", opts)
 	-- 查看实现的地方

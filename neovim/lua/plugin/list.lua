@@ -234,4 +234,12 @@ return {
 			require("plugin.config.vista-vim")
 		end,
 	},
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("plugin.config.dashboard")
+		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 }

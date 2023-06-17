@@ -9,7 +9,6 @@
 
 local lspkind = require("lspkind")
 local cmp = require("cmp")
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -18,8 +17,8 @@ cmp.setup({
 	},
 	-- 补全源的排序
 	sources = cmp.config.sources({
-		{ name = "vsnip" },
 		{ name = "nvim_lsp" },
+		{ name = "vsnip" },
 		{ name = "path" },
 		{ name = "buffer" },
 		{ name = "cmdline" },
@@ -52,10 +51,17 @@ cmp.setup({
 	},
 	-- 补全相关的按键
 	mapping = {
+		--BUG: not work
+
+		-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		-- 选择下一个
+		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<Tab>"] = cmp.mapping.select_next_item(),
 		["<Up>"] = cmp.mapping.select_prev_item(),
 		["<Down>"] = cmp.mapping.select_next_item(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
 	},
 })
 

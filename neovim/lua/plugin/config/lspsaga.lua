@@ -16,7 +16,7 @@ require("lspsaga").setup({
 		scroll_down = "<C-f>",
 		scroll_up = "<C-b>",
 	},
-	request_timeout = 2000,
+	request_timeout = 3500,
 
 	-- See Customizing Lspsaga's Appearance
 	ui = {
@@ -31,12 +31,10 @@ require("lspsaga").setup({
 		min_width = 30,
 		force_max_height = false,
 		keys = {
-			jump_to = "p",
-			expand_or_jump = "o",
+			-- <C-t> jump back
+			expand_or_jump = "<CR>",
 			vsplit = "s",
 			split = "i",
-			tabe = "t",
-			tabnew = "r",
 			quit = { "q", "<ESC>" },
 			close_in_preview = "<ESC>",
 		},
