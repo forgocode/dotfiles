@@ -53,7 +53,7 @@ rm_config_path() {
 	rm ~/.zshrc
 	# rm ~/.p10k.zsh
 	rm ~/.tmux.conf
-	rm -rf ~/.config/nvim
+	rm ~/.config/nvim
 }
 
 download_nvim_config() {
@@ -83,5 +83,4 @@ fi
 rm_config_path
 ln_config
 #
-ln_config
 printf "\033[32mConfig is update successfully! enjoy it.\033[0m\n"

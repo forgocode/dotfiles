@@ -44,7 +44,8 @@ vim.g.mkdp_preview_options = {
 }
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", opts)
-vim.keymap.set("v", "<leader>mp", "<cmd>MarkdownPreview<CR>", opts)
+--preview markdown
+vim.keymap.set("n", "<leader>pm", "<cmd>MarkdownPreview<CR>", opts)
+vim.keymap.set("v", "<leader>pm", "<cmd>MarkdownPreview<CR>", opts)
 vim.keymap.set("n", "<leader>cmp", "<cmd>MarkdownPreviewStop<CR>", opts)
 vim.keymap.set("v", "<leader>cmp", "<cmd>MarkdownPreviewStop<CR>", opts)
