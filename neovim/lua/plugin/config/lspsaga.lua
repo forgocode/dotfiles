@@ -39,7 +39,16 @@ require("lspsaga").setup({
 			close_in_preview = "<ESC>",
 		},
 	},
-	code_action = { ... },
+	code_action = {
+		num_shortcut = true,
+		show_server_name = false,
+		extend_gitsigns = true,
+		keys = {
+			-- string | table type
+			quit = { "q", "<ESC>" },
+			exec = "<CR>",
+		},
+	},
 	rename = { quit = "<ESC>", exec = "<CR>" },
 	-- etc.
 	outline = {
