@@ -8,6 +8,7 @@
 --**********************************************************
 
 require("telescope").setup()
+
 -- find file
 vim.keymapping.smap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", vim.keymapping.opts)
 -- find word
