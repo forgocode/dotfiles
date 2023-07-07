@@ -234,4 +234,13 @@ return {
 			require("plugin.config.vista-vim")
 		end,
 	},
+	{ "ajmwagar/vim-deus" },
+
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("plugin.config.trouble")
+		end,
+	},
 }

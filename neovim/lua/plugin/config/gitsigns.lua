@@ -71,7 +71,7 @@ require("gitsigns").setup({
 		map("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<CR>")
 		map("n", "<leader>hb", '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
 		-- 查看当前行的最后一次修改记录
-		map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+		map("n", "<leader>lb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
 		-- 查看当前文件的diff
 		map("n", "<leader>hd", "<cmd>Gitsigns diffthis<CR>")
 		map("n", "<leader>hD", '<cmd>lua require"gitsigns".diffthis("~")<CR>')
