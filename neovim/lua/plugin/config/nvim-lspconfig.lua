@@ -30,7 +30,7 @@ local on_attach = function(_, bufnr)
 	-- 跳转到定义
 	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions theme=dropdown<CR>", opts)
 
-	vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+	vim.keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
 	--r 新窗口中打开
 	-- t 当前窗口打开
 	-- 变量重名 rename

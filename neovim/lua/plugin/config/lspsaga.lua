@@ -44,16 +44,16 @@ require("lspsaga").setup({
 		force_max_height = false,
 		keys = {
 			-- <C-t> jump back
-			expand_or_jump = "<CR>",
+			toggle_or_open = "<CR>",
 			vsplit = "s",
 			split = "i",
 			quit = { "q", "<ESC>" },
-			close_in_preview = "<ESC>",
+			close = "<ESC>",
 		},
 	},
 	code_action = {
 		num_shortcut = true,
-		show_server_name = false,
+		show_server_name = true,
 		extend_gitsigns = true,
 		keys = {
 			-- string | table type
