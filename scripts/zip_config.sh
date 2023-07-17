@@ -32,14 +32,20 @@ zip_oh_my_zsh(){
 	tar -zcvf ~/tmp/ohmyzsh.tar.gz ~/.oh-my-zsh
 }
 
+zip_go_lsp(){
+	printf '%s\n' "start zip go_lsp config"
+	tar -zcvf ~/tmp/go_lsp.tar.gz ~/go/bin/
+}
+
 zip_all_config(){
 	tar -zcvf ~/tmp/all_config.tar.gz ~/tmp/ohmyzsh.tar.gz ~/tmp/tmux.tar.gz ~/tmp/dotfiles.tar.gz ~/tmp/nvim.tar.gz
 }
 
-zip_dotfiles
-zip_nvim
-zip_tmux
-zip_oh_my_zsh
-
-sleep 1
-zip_all_config
+# zip_dotfiles
+# zip_nvim
+# zip_tmux
+# zip_oh_my_zsh
+#
+# sleep 1
+# zip_all_config
+zip_go_lsp
