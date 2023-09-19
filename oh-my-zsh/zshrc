@@ -82,7 +82,10 @@ ZSH_THEME="robbyrussell"
 # git 显示当前目录的版本信息
 # z 快速到之前打开的目录
 # zsh-syntax-highlighting 对错误的命令标红
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 # zsh-autosuggestions 自动粘贴使用过的命令
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 plugins=(
 	git
@@ -121,7 +124,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vim="nvim"
-alias ll="ls -al"
 alias nf="neofetch"
 alias uwt= "ntpdate time.windows.com"
 
@@ -148,3 +150,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+echo $(cat /etc/issue)
