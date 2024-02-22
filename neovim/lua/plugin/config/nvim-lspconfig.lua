@@ -115,3 +115,20 @@ require("lspconfig").bashls.setup({
 	root_dir = util.find_git_ancestor,
 	on_attach = on_attach,
 })
+
+require("lspconfig").pylsp.setup{
+	cmd = {"pylsp"},
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'W391'},
+					maxLineLength = 100
+				}
+			}
+		}
+	},
+	filetypes = {"python"},
+	single_file_support = true,
+	on_attach = on_attach
+}

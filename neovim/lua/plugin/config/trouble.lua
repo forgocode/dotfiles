@@ -51,7 +51,7 @@ require("trouble").setup({
 		-- icons / text used for a diagnostic
 		error = "",
 		warning = "",
-		hint = "",
+		--hint = "",
 		information = "",
 		other = "",
 	},
