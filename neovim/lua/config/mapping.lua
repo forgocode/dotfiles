@@ -31,3 +31,6 @@ vim.keymap.set("n", "sc", "<C-w>c", opts)
 vim.keymap.set("n", "so", "<C-w>o", opts)
 
 vim.keymap.set("v", "<C-c>", '"+y', opts)
+
+-- 取消搜索高亮
+vim.keymap.set("n", "<Esc>", "<cmd>:noh<CR>", opts)

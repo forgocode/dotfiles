@@ -24,24 +24,20 @@ local on_attach = function(_, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	--todo: 可以退出<Esc>gr 和 gh
 	--vim.keymapping.smap("t", "<Esc>", "<cmd>q<CR>", vim.keymapping.opts)
-	-- vim.keymapping.smap("n", "<Esc>", "<cmd>q<CR>", vim.keymapping.opts)
+	--vim.keymapping.smap("n", "<Esc>", "<cmd>:q<CR>", vim.keymapping.opts)
 	-- 查找引用
 	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references theme=dropdown <CR>", opts)
 	-- 跳转到定义
 	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions theme=dropdown<CR>", opts)
 
-	vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+	vim.keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
 	--r 新窗口中打开
 	-- t 当前窗口打开
 	-- 变量重名 rename
-	vim.keymap.set("n", "<space>rn", "<cmd>Lspsage rename <CR>", opts)
+	vim.keymap.set("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
 
 	-- 查看变量类型/声明？
 	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-
-	-- 结构体定义的地方
-	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-
 	-- 显示变量可执行的操作
 	vim.keymap.set({ "n", "v" }, "<space>ca", "<cmd>Lspsaga code_action <CR>", opts)
 	-- 查看实现的地方
@@ -119,3 +115,20 @@ require("lspconfig").bashls.setup({
 	root_dir = util.find_git_ancestor,
 	on_attach = on_attach,
 })
+
+require("lspconfig").pylsp.setup{
+	cmd = {"pylsp"},
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'W391'},
+					maxLineLength = 100
+				}
+			}
+		}
+	},
+	filetypes = {"python"},
+	single_file_support = true,
+	on_attach = on_attach
+}

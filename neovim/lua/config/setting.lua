@@ -37,6 +37,9 @@ vim.o.syntax = "enable"
 --自动换行
 vim.o.wrap = true
 
+-- 搜索高亮
+vim.g.hlsearch = true
+
 vim.keymapping = {
 	smap = vim.api.nvim_set_keymap,
 	dmap = vim.api.nvim_del_keymap,

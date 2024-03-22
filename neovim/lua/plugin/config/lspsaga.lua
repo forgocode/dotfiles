@@ -16,10 +16,22 @@ require("lspsaga").setup({
 		scroll_down = "<C-f>",
 		scroll_up = "<C-b>",
 	},
-	request_timeout = 2000,
+	request_timeout = 3500,
 
 	-- See Customizing Lspsaga's Appearance
 	ui = {
+		-- This option only works in Neovim 0.9
+		title = true,
+		-- Border type can be single, double, rounded, solid, shadow.
+		border = "single",
+		winblend = 0,
+		expand = "",
+		collapse = "",
+		code_action = "",
+		incoming = " ",
+		outgoing = " ",
+		hover = " ",
+		kind = {},
 		keys = {
 			quit = { "q", "<ESC>" },
 		},
@@ -31,17 +43,25 @@ require("lspsaga").setup({
 		min_width = 30,
 		force_max_height = false,
 		keys = {
-			jump_to = "p",
-			expand_or_jump = "o",
+			-- <C-t> jump back
+			toggle_or_open = "<CR>",
 			vsplit = "s",
 			split = "i",
-			tabe = "t",
-			tabnew = "r",
 			quit = { "q", "<ESC>" },
-			close_in_preview = "<ESC>",
+			close = "<ESC>",
 		},
 	},
-	code_action = { ... },
+	code_action = {
+		num_shortcut = true,
+		show_server_name = true,
+		extend_gitsigns = true,
+		keys = {
+			-- string | table type
+			quit = { "q", "<ESC>" },
+			exec = "<CR>",
+		},
+	},
+	rename = { quit = "<ESC>", exec = "<CR>" },
 	-- etc.
 	outline = {
 		keys = {

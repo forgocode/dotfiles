@@ -34,7 +34,7 @@ vim.cmd([[
 	autocmd!
 	autocmd FileType go iabbrev  <buffer> Test func Test_(t *testing.T) { }
 	autocmd FileType go iabbrev  <buffer> main func main(){ }
-	autocmd BufNewFile *_test.go exec :call Start_Go_Test()
+	autocmd BufNewFile *_test.go :call Start_Go_Test()
     function Start_Go_Test()
   		call setline(1, 'package '.expand("%:p:h:t"))
   		call setline(2, '')

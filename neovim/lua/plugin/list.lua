@@ -74,7 +74,7 @@ return {
 	-- 文件字母查找
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
+		tag = "0.1.2",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		config = function()
 			require("plugin.config.telescope")
@@ -232,6 +232,15 @@ return {
 		"liuchengxu/vista.vim",
 		config = function()
 			require("plugin.config.vista-vim")
+		end,
+	},
+	{ "ajmwagar/vim-deus" },
+
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("plugin.config.trouble")
 		end,
 	},
 }
